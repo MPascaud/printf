@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 16:03:47 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/13 17:12:47 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/13 17:27:51 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@
 #include "ft_printf.h"
 #include <wchar.h>
 
+
+void	initialisation(t_variables *variables)
+{
+	variables->diese = 0;
+	variables->espace = 0;
+	variables->zero = 0;
+	variables->moins = 0;
+	variables->plus = 0;
+	variables->gabarit = 0;
+	variables->precision = 0;
+	variables->modificateur = 'a';
+}
 
 int		ft_printf(char *blabla, ...)
 {
@@ -32,14 +44,15 @@ int		ft_printf(char *blabla, ...)
 	j = 0;
 	modulo = 0;
 	variables = (t_variables*)malloc(sizeof(t_variables));
-	variables->diese = 0;
+/*	variables->diese = 0;
 	variables->espace = 0;
 	variables->zero = 0;
 	variables->moins = 0;
 	variables->plus = 0;
 	variables->gabarit = 0;
 	variables->precision = 0;
-	variables->modificateur = 'a';
+	variables->modificateur = 'a';*/
+	initialisation(variables);
 //	va_start (args, blabla);
 	while (blabla[i])
 	{
@@ -129,6 +142,17 @@ int		ft_printf(char *blabla, ...)
 				}
 				variables->specificateur = blabla[i];
 		//		i--;
+				printf("\nvariables->diese = %d\n", variables->diese);
+				printf("variables->espace = %d\n", variables->espace);
+				printf("variables->zero = %d\n", variables->zero);
+				printf("variables->moins = %d\n", variables->moins);
+				printf("variables->plus = %d\n", variables->plus);
+				printf("variables->gabarit = %d\n", variables->gabarit);
+				printf("variables->precision = %d\n", variables->precision);
+				printf("variables->modificateur = %c\n", variables->modificateur);
+				printf("variables->specificateur = %c\n", variables->specificateur);
+		//		le va_arg ici
+				initialisation(variables);				
 				modulo = 0;
 			}
 			
@@ -137,7 +161,7 @@ int		ft_printf(char *blabla, ...)
 //		printf("coucou");
 	}
 
-	printf("\nvariables->diese = %d\n", variables->diese);
+/*	printf("\nvariables->diese = %d\n", variables->diese);
 	printf("variables->espace = %d\n", variables->espace);
 	printf("variables->zero = %d\n", variables->zero);
 	printf("variables->moins = %d\n", variables->moins);
@@ -145,7 +169,7 @@ int		ft_printf(char *blabla, ...)
 	printf("variables->gabarit = %d\n", variables->gabarit);
 	printf("variables->precision = %d\n", variables->precision);
 	printf("variables->modificateur = %c\n", variables->modificateur);
-	printf("variables->specificateur = %c\n", variables->specificateur);
+	printf("variables->specificateur = %c\n", variables->specificateur);*/
 	return (0);
 }
 
@@ -159,6 +183,6 @@ int		main(void)
 	wprintf("%ls", texte);*/
 //	printf("%5.2f.", 2.7182);
 
-	ft_printf("%%%5.2fdgs%%", 2.7182);
+	ft_printf("%ddgs%lls", 2.7182);
 	return (0);
 }
