@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/10 18:37:59 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/13 17:08:31 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int		i;
+	unsigned char	*p;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	p = s;
+	while (n)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		*p = (unsigned char)c;
+		p++;
+		n--;
 	}
-	printf("\n");
+	return (s);
 }
-

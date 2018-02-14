@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_striterilefaux.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/18 16:43:30 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/18 18:39:43 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
+	unsigned int		i;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
+	while (s[i])
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		f(i, s + i);
+		i++;
 	}
-	printf("\n");
 }
-

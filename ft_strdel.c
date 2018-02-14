@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_stredellefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/17 16:37:29 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/17 17:19:03 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <stdlib.h>
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void	ft_strdel(char **as)
 {
-	int		i;
-
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	if (as)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		free(*as);
+		*as = NULL;
 	}
-	printf("\n");
 }
-

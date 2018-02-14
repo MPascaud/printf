@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strequlefaux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/18 20:20:27 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/18 20:39:37 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	achage_binaire(unsigned int n)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	int		i;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while (s1[i] || s2[i])
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		if (s1[i] == '\0' || s2[i] == '\0')
+		{
+			return (0);
+		}
+		if (s1[i] != s2[i])
+		{
+			return (0);
+		}
+		i++;
 	}
-	printf("\n");
+	return (1);
 }
-

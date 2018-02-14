@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_memcmplefaux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/13 12:02:44 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/21 21:22:10 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	p1 = (unsigned char*)s1;
+	p2 = (unsigned char*)s2;
+	i = 0;
+	while (i < n)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		if (p1[i] != p2[i])
+		{
+			return (p1[i] - p2[i]);
+		}
+		i++;
 	}
-	printf("\n");
+	return (0);
 }
-

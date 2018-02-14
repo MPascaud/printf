@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_memcpylefaux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/12 15:08:33 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/13 17:24:18 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int		i;
+	size_t		i;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	while (i < n)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		((char*)dest)[i] = ((char*)src)[i];
+		i++;
 	}
-	printf("\n");
+	return (dest);
 }
-

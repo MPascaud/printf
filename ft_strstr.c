@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strstrlefaux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/14 21:44:02 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/29 20:42:51 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	achage_binaire(unsigned int n)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
 	int		i;
+	int		j;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	j = 0;
+	if (needle[i] == '\0')
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		return ((char*)haystack);
 	}
-	printf("\n");
+	while (haystack[i])
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j])
+		{
+			if (needle[j + 1] == '\0')
+			{
+				return ((char*)(haystack + i));
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
-

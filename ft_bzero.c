@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_bzerolefaux.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/12 13:10:25 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/16 21:16:04 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
-	int		i;
+	char	*c;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	c = s;
+	while (n)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		*c = 0;
+		c++;
+		n--;
 	}
-	printf("\n");
 }
-

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fdlefaux.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/21 20:56:42 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/21 21:08:55 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	achage_binaire(unsigned int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	if (n < 0)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		ft_putchar_fd('-', fd);
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			n = -147483648;
+		}
+		n = -n;
 	}
-	printf("\n");
+	if (n >= 10)
+	{
+		ft_putnbr_fd((n / 10), fd);
+	}
+	ft_putchar_fd(((n % 10) + '0'), fd);
 }
-

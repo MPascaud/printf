@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_isdigitlefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/16 17:05:44 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/16 17:26:09 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	achage_binaire(unsigned int n)
+int		ft_isdigit(int c)
 {
-	int		i;
-
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
-	{
-		printf("%d", (n >> i) & 1);
-		i--;
-	}
-	printf("\n");
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
-

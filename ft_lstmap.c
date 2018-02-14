@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/29 13:05:55 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/29 18:23:42 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int		i;
+	t_list	*lst2;
+	t_list	*ptr;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
-	{
-		printf("%d", (n >> i) & 1);
-		i--;
-	}
-	printf("\n");
+	if (!f || !lst)
+		return (NULL);
+	ptr = f(lst);
+	if (!ptr || !(lst2 = ft_lstnew(ptr->content, ptr->content_size)))
+		return (NULL);
+	if (lst->next)
+		lst2->next = ft_lstmap(lst->next, f);
+	return (lst2);
 }
-

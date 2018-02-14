@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/28 15:39:45 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/28 17:29:14 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+void			ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	int		i;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	tmp = *alst;
+	while (tmp != NULL)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		tmp2 = tmp->next;
+		del(tmp->content, tmp->content_size);
+		free(tmp);
+		tmp = tmp2;
 	}
-	printf("\n");
+	*alst = NULL;
 }
-

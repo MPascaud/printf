@@ -6,8 +6,27 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/12 18:49:43 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/12 18:51:28 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/14 23:45:04 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*str(wchar_t, 
+#include <unistd.h>
+#include <wchar.h>
+
+
+int		unicode(void)
+{
+	unsigned char	c;
+
+	c = 0xe1;
+	write(1, &c, 1);
+//	c = 0x88;
+//	write(1, &c, 1);
+//	c = 0xb4;
+//	write(1, &c, 1);
+//	c = 0x0a;
+//	write(1, &c, 1);
+	return (0);
+}
+
+

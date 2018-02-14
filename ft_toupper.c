@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_toupperlefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/16 18:34:00 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/16 19:03:01 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	achage_binaire(unsigned int n)
+int		ft_toupper(int c)
 {
-	int		i;
-
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	if (ft_isalpha(c) == 1)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		if (c >= 97 && c <= 122)
+		{
+			c = c - 32;
+			return (c);
+		}
+		else
+			return (c);
 	}
-	printf("\n");
+	return (c);
 }
-

@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strnstrlefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/16 14:10:01 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/25 22:36:39 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
-	int		i;
+	size_t		i;
+	size_t		j;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	j = 0;
+	if (n[i] == '\0')
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		return ((char*)h);
 	}
-	printf("\n");
+	while (h[i])
+	{
+		j = 0;
+		while (h[i + j] == n[j] && (i + j) < len)
+		{
+			if (n[j + 1] == '\0')
+			{
+				return ((char*)(h + i));
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
-

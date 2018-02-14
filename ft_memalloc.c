@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_memalloclefaux.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/16 20:30:41 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/16 21:19:20 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void	achage_binaire(unsigned int n)
+void	*ft_memalloc(size_t size)
 {
-	int		i;
+	char	*mem;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	if (size > 4294967295)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		return (NULL);
 	}
-	printf("\n");
+	if (!(mem = (char*)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }
-

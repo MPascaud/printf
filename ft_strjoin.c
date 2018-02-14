@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strjoinlefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/18 22:11:51 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/24 22:30:22 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <stdlib.h>
+#include <string.h>
+#include "libft.h"
 
-void	achage_binaire(unsigned int n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
+	char	*str;
+	size_t	i;
+	size_t	j;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(str = (char*)malloc(sizeof(char)
+					* ((ft_strlen(s1)) + (ft_strlen(s2))))))
+		return (NULL);
+	while (s1[i])
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		str[i] = s1[i];
+		i++;
 	}
-	printf("\n");
+	while (s2[j])
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
 }
-

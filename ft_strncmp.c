@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strncmplefaux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/16 14:56:40 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/25 17:25:17 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
 
-void	achage_binaire(unsigned int n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
+	size_t		i;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	while (((unsigned char)s1[i] || (unsigned char)s2[i]) && i < n)
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		if ((unsigned char)s1[i] < (unsigned char)s2[i]
+				|| (unsigned char)s1[i] > (unsigned char)s2[i])
+		{
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		}
+		i++;
 	}
-	printf("\n");
+	return (0);
 }
-

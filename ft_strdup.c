@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   ft_strduplefaux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2017/11/13 13:23:07 by mpascaud          #+#    #+#             */
+/*   Updated: 2017/11/22 15:35:01 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <string.h>
+#include <stdlib.h>
 
-void	achage_binaire(unsigned int n)
+char	*ft_strdup(const char *s)
 {
+	char	*str;
 	int		i;
 
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
+	i = 0;
+	while (s[i])
 	{
-		printf("%d", (n >> i) & 1);
-		i--;
+		i++;
 	}
-	printf("\n");
+	if (!(str = (char*)malloc(sizeof(*str) * (i + 1))))
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-

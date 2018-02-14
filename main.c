@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficherbinaire.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:59:12 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 00:04:38 by mpascaud         ###   ########.fr       */
+/*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
+/*   Updated: 2018/02/14 23:58:32 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+//#include "ft_printf.h"
 #include "libftprintf.h"
 
-void	achage_binaire(unsigned int n)
+int		main(void)
 {
-	int		i;
-
-	i = 31;
-	printf("%d en binaire : ", n);
-	while (i >= 0)
-	{
-		printf("%d", (n >> i) & 1);
-		i--;
-	}
-	printf("\n");
+	ft_printf("%d\n", 2);
+	return (0);
 }
-
