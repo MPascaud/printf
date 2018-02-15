@@ -6,13 +6,12 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 22:57:06 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/25 18:40:15 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:03:09 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
-#include "libft.h"
+#include "libftprintf.h"
 
 static size_t		ft2(const char *s)
 {

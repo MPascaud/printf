@@ -6,11 +6,11 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:58:28 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/01/24 16:10:31 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:06:50 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {

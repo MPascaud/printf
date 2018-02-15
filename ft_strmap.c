@@ -6,13 +6,12 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 18:40:34 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/24 22:25:44 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:03:28 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
-#include "libft.h"
+#include "libftprintf.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {

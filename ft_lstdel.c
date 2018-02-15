@@ -6,13 +6,12 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 15:39:45 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/28 17:29:14 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:00:03 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 #include <stdlib.h>
-#include <string.h>
 
 void			ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {

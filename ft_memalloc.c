@@ -6,13 +6,12 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 20:30:41 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/16 21:19:20 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:05:46 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
-#include "libft.h"
+#include "libftprintf.h"
 
 void	*ft_memalloc(size_t size)
 {

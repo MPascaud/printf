@@ -6,16 +6,23 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/14 23:58:32 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 19:58:18 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-//#include "ft_printf.h"
 #include "libftprintf.h"
+
+
+
+
+
+
+
 
 int		main(void)
 {
-	ft_printf("%d\n", 2);
+	ft_printf("%d", 55555555);
+//	printf("%1.6d", 1234);
 	return (0);
 }

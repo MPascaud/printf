@@ -6,11 +6,11 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 20:08:21 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/25 17:24:27 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:02:10 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

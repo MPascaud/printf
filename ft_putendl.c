@@ -6,11 +6,11 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:14:44 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/21 17:22:27 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:02:23 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 void	ft_putendl(char const *s)
 {

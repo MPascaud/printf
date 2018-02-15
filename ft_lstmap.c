@@ -6,12 +6,11 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:05:55 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/29 18:23:42 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 13:59:15 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include "libftprintf.h"
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {

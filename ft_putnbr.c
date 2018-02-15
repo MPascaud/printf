@@ -6,11 +6,11 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:24:37 by mpascaud          #+#    #+#             */
-/*   Updated: 2017/11/21 18:08:13 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:01:19 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 void	ft_putnbr(int nb)
 {
