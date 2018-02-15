@@ -6,13 +6,13 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:40:03 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 19:31:42 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/15 21:17:53 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-unsigned long long	ft_cast(va_list args, t_variables *variables, unsigned long long tmp)
+long long	ft_cast(va_list args, t_variables *variables, long long tmp)
 {
 //	unsigned long long	tmp;
 
