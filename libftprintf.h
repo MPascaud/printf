@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 21:30:34 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/16 19:56:20 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ typedef struct	s_variables
 }				t_variables;
 void			initialisation(t_variables *variables);
 void			ft_argument(va_list args, t_variables *variables);
-long long		ft_cast(va_list args, t_variables *variables, long long tmp);
+void		ft_cast(va_list args, t_variables *variables, intmax_t *tmp);
 int				nombrechiffres(unsigned long long nb);
 
 #endif
