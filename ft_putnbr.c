@@ -6,13 +6,13 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:24:37 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 14:01:19 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/16 22:50:16 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(intmax_t nb)
 {
 	if (nb < 0)
 	{
@@ -30,3 +30,11 @@ void	ft_putnbr(int nb)
 	}
 	ft_putchar((nb % 10) + '0');
 }
+
+
+
+/*
+void	ft_putnbr(intmax_t *tmp, t_variables *variables)
+{
+	ft_putnbrint((intmax_t)*tmp);
+}*/

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/16 19:56:20 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/16 22:49:13 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFTPRINTF_H
 
 # include <string.h>
+# include <inttypes.h>
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -62,7 +63,7 @@ char			*ft_itoa(int n);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
-void			ft_putnbr(int n);
+void			ft_putnbr(intmax_t nb);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
@@ -106,5 +107,6 @@ void			initialisation(t_variables *variables);
 void			ft_argument(va_list args, t_variables *variables);
 void		ft_cast(va_list args, t_variables *variables, intmax_t *tmp);
 int				nombrechiffres(unsigned long long nb);
+//void    ft_putnbr(intmax_t *tmp, t_variables *variables);
 
 #endif

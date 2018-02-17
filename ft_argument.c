@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/16 19:55:41 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/17 01:01:27 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void	ft_decimal(va_list args, t_variables *variables)
    	intmax_t				tmp;
 	int					nbchiffres;
 	int					i;
-	int					neg;
+	int					j;
 
 	cast = 0;
 	i = 0;
-	neg = 0;
+	j = 0;
+//	tmp = va_arg(args, long int);
 //	printf("1--->%lld\n", tmp);
 	if (variables->modificateur != 'a')
 	{
@@ -62,7 +63,10 @@ void	ft_decimal(va_list args, t_variables *variables)
 	{
 		if ((variables->espace == 1 || variables->plus == 1) && tmp >= 0)
 			i++;
-		while ((i < variables->gabarit - variables->precision) && (i < variables->gabarit - nbchiffres))
+		if (tmp < 0)
+			i++;
+		j = i;
+		while ((i < variables->gabarit - variables->precision) && (i < variables->gabarit - nbchiffres) && i < variables->precision + j)
 		{
 			write(1, " ", 1);
 			i++;
@@ -76,8 +80,11 @@ void	ft_decimal(va_list args, t_variables *variables)
 			write(1, "-", 1);
 			tmp = -tmp;
 		}
+		printf("i = %d\n", i);
+		j = i;
 		i = 0;
-		while (i < variables->precision - nbchiffres)
+		printf("i, j, nbchiffres, gabarit: %d / %d /%d / %d\n", i, j, nbchiffres, variables->gabarit);
+		while ((i < variables->precision - nbchiffres) || (j + i + nbchiffres) < variables->gabarit /*&& (i < variables->gabarit - nbchiffres)*/)
 		{
 			write(1, "0", 1);
 			i++;
@@ -103,7 +110,7 @@ void	ft_decimal(va_list args, t_variables *variables)
 		{
 			write(1, "-", 1);
 			tmp = -tmp;
-			neg++;
+			j++;
 			i++;
 		}
 		while (i <= (variables->precision - nbchiffres))
@@ -114,7 +121,7 @@ void	ft_decimal(va_list args, t_variables *variables)
 		ft_putnbr(tmp);
 		i += nbchiffres;
 		printf("i = %d\n", i);
-		if (variables->plus == 0 && neg == 0)
+		if (variables->plus == 0 && j == 0)
 			i--;
 		while (i < variables->gabarit)
 		{
