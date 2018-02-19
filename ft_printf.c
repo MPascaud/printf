@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 16:03:47 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/15 16:49:18 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 18:48:30 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int		ft_printf(char *blabla, ...)
 	char			*gabarit_str;
 	char			*precision_str;
 	int				j;
+	int				point;
 
 	i = 0;
 	j = 0;
 	modulo = 0;
+	point = 0;
 	variables = (t_variables*)malloc(sizeof(t_variables));
 	initialisation(variables);
 	va_start (args, blabla);
@@ -96,6 +98,7 @@ int		ft_printf(char *blabla, ...)
 					}
 					precision_str[j] = '\0';
 					variables->precision = ft_atoi(precision_str);
+					point = 1;
 					free(precision_str);
 				}
 				if (blabla[i] == 'h' || blabla[i] == 'l' || blabla[i] == 'j' || blabla[i] == 'z')
@@ -109,6 +112,8 @@ int		ft_printf(char *blabla, ...)
 					}
 				}
 				variables->specificateur = blabla[i];
+				if (point == 0 && variables->specificateur == 's')
+				   variables->precision	= -1;
 /*				printf("variables->diese = %d\n", variables->diese);
 				printf("variables->espace = %d\n", variables->espace);
 				printf("variables->zero = %d\n", variables->zero);

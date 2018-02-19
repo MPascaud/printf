@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/16 22:49:13 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 19:48:59 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 # include <unistd.h>
 # include <stdlib.h>
 # include <wchar.h>
-int				unicode(void);
-void			achage_binaire(unsigned int n);
+
+//int				unicode(void);
+//void			achage_binaire(unsigned int n);
 int				ft_printf(char *blabla, ...);
 
 typedef struct	s_variables
@@ -103,10 +104,15 @@ typedef struct	s_variables
 	char	modificateur;
 	char	specificateur;
 }				t_variables;
+void		ft_string(va_list args, t_variables *variables);
+void		ft_character(va_list args, t_variables *variables);
+int			nombrechiffres(unsigned long long nb);
+void		ft_decimal(va_list args, t_variables *variables);
 void			initialisation(t_variables *variables);
 void			ft_argument(va_list args, t_variables *variables);
 void		ft_cast(va_list args, t_variables *variables, intmax_t *tmp);
-int				nombrechiffres(unsigned long long nb);
+void		ft_string(va_list args, t_variables *variables);
+//int				nombrechiffres(unsigned long long nb);
 //void    ft_putnbr(intmax_t *tmp, t_variables *variables);
 
 #endif

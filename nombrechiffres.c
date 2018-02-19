@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialisation.c                                   :+:      :+:    :+:   */
+/*   ft_argument.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 16:16:54 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/19 18:33:06 by mpascaud         ###   ########.fr       */
+/*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
+/*   Updated: 2018/02/19 14:48:47 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libftprintf.h"
 
-void	initialisation(t_variables *variables)
+int		nombrechiffres(unsigned long long nb)
 {
-	variables->diese = 0;
-	variables->espace = 0;
-	variables->zero = 0;
-	variables->moins = 0;
-	variables->plus = 0;
-	variables->gabarit = 0;
-	variables->precision = 0;
-	variables->modificateur = 'a';
+	int		result;
+	int		tmp;
+
+	result = 0;
+	tmp = (int)nb;
+	if (nb == 0)
+		return (1);
+	while (tmp != 0)
+	{
+		tmp /= 10;
+		result++;
+	}
+	return (result);
 }
+
+

@@ -6,7 +6,7 @@
 /*   By: kgricour <kgricour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/14 16:35:58 by kgricour          #+#    #+#             */
-/*   Updated: 2018/02/19 14:18:47 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 17:39:20 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 int main(void)
 {
-	//	setlocale(LC_ALL, "");
-//		wchar_t *str = L"1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤ 6 ♫ ";
+		setlocale(LC_ALL, "");
+		wchar_t *str = L"1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤ 6 ♫ ";
 	//	ft_printf("%5.2s is a string\n", "this");
 	//	printf("%5.2s is a string\n", "this");
 	//ft_printf("%hx", 4294967296);
@@ -61,7 +61,7 @@ int main(void)
 //		      printf("pr%5d\n", -42);//------
   //	ft_printf("%03.2d\n", -1);
 //	 printf("%03.2d\n", -1);
-		   printf("ld = %ld\n", -100000000000);
+/*		   printf("ld = %ld\n", -100000000000);
 		ft_printf("ld = %ld\n", -100000000000);
 		   printf("z = %zd\n", -100000000000);
 		ft_printf("z = %zd\n", -100000000000);
@@ -70,7 +70,7 @@ int main(void)
 		   printf("h = %hd\n", -100000000000);
 		ft_printf("h = %hd\n", -100000000000);
 		ft_printf("ft %+05d\n", 7);
-		printf("pr %+05d\n", 7);
+		printf("pr %+05d\n", 7);*/
 //	ft_printf("@moulitest: %#.x %#.0x\n", 0, 0);
 //	   printf("@moulitest: %#.x %#.0x\n", 0, 0);
 //ft_printf("%5.2s\n", "coucou");
@@ -90,7 +90,7 @@ int main(void)
 		//	ft_printf("%b\n", "coucou");
 		//	ft_printf("%o\n", 10);
 //			ft_printf("%50S\n", str);
-//			   printf("%50S\n", str);
+			   printf("%50S\n", str);
 		//	ft_printf("%#08x\n", 42);
 		//	printf("%#08x\n", 42);
 		//	ft_printf("%#.x%#.0x\n", 0, 0);
@@ -112,6 +112,7 @@ int main(void)
 		ft_printf("ft hexa = %x\n", -999999999);
 		printf("pr hexa = %x\n", -999999999);
 */
+		printf("%C%C", L'☂', '1');
 	//	ft_printf("\n");
 /*		ft_printf("ft--->%% %5% %%%");
 		ft_printf("\n");

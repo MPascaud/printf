@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/19 13:11:30 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 19:45:23 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 
 
-int		main(void)
+/*int		main(void)
 {
 	//	ft_printf("%5.6d\n", -456);
 	//	printf("%5.6d\n", -456);
@@ -45,12 +45,39 @@ int		main(void)
 	//	printf("%1.6d", 1234);
 	return (0);
 }
-
-/*int main()
+*/
+int main()
 {
-	setlocale(LC_ALL, "");
+//	setlocale(LC_ALL, "");
 //	wprintf(L"ο Δικαιοπολις εν αγρω εστιν\n");  // wide output
 //	freopen(NULL, "w", stdout);                 // lets me switch
-	printf("ο Δικαιοπολις εν αγρω εστιν\n");    // byte output
-	printf("%C \n", 130);
-}*/
+//	printf("ο Δικαιοπολις εν αγρω εστιν\n");    // byte output
+//	printf("%C \n", 0x130);
+//	printf("pr%300c\n ", 0x300);
+//	ft_printf("ft%300cvsvg%%sts %.56d\n%%\n", 0x300, 45);
+//	wchar_t *str = L"ჩ";
+//	printf("%50S", str);
+//	printf("%-30S", L"ჩ");
+	printf("%-8.7s%%%25.4d\n", "egestg", 1235);
+	ft_printf("%-8.7s%%%25.4d\n", "egestg", 1235);
+//	ft_printf("%4.3s\n", "gtr");
+//	printf("%4.3s\n", "gtr");
+	return (0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
