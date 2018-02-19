@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/17 01:01:27 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 14:16:27 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ void	ft_decimal(va_list args, t_variables *variables)
 		if (tmp < 0)
 			i++;
 		j = i;
-		while ((i < variables->gabarit - variables->precision) && (i < variables->gabarit - nbchiffres) && i < variables->precision + j)
+		//printf("i = %d, nbchiffres = %d, variables->gabarit = %d\n", i, nbchiffres, variables->gabarit);
+		while (((i < variables->gabarit - variables->precision) && (i < variables->gabarit - nbchiffres) && i < variables->precision + j) || ((i + nbchiffres) < variables->gabarit && variables->zero == 0 && (i + variables->precision) < variables->gabarit))
 		{
 			write(1, " ", 1);
 			i++;
@@ -80,11 +81,11 @@ void	ft_decimal(va_list args, t_variables *variables)
 			write(1, "-", 1);
 			tmp = -tmp;
 		}
-		printf("i = %d\n", i);
+//		printf("i = %d\n", i);
 		j = i;
 		i = 0;
-		printf("i, j, nbchiffres, gabarit: %d / %d /%d / %d\n", i, j, nbchiffres, variables->gabarit);
-		while ((i < variables->precision - nbchiffres) || (j + i + nbchiffres) < variables->gabarit /*&& (i < variables->gabarit - nbchiffres)*/)
+//		printf("i, j, nbchiffres, gabarit: %d / %d /%d / %d\n", i, j, nbchiffres, variables->gabarit);
+		while (((i < variables->precision - nbchiffres) || (j + i + nbchiffres) < variables->gabarit) /*&& (i < variables->gabarit - nbchiffres)*/)
 		{
 			write(1, "0", 1);
 			i++;
@@ -120,7 +121,7 @@ void	ft_decimal(va_list args, t_variables *variables)
 		}
 		ft_putnbr(tmp);
 		i += nbchiffres;
-		printf("i = %d\n", i);
+//		printf("i = %d\n", i);
 		if (variables->plus == 0 && j == 0)
 			i--;
 		while (i < variables->gabarit)

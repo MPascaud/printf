@@ -6,7 +6,7 @@
 /*   By: kgricour <kgricour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/14 16:35:58 by kgricour          #+#    #+#             */
-/*   Updated: 2018/02/16 23:44:48 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/19 14:18:47 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,42 +30,53 @@ int main(void)
 	//	ft_printf("%.5x\n", 5427);
 	//	   printf("%.5x\n", 5427);
 	//   printf("%s");
-	//	ft_printf("%s");
-//		printf("%hd\n", 444444442);
-//		ft_printf("%hd\n", 444444442);
-//		ft_printf("%+10.5d\n", 4242);
-//		printf("%+10.5d\n", 4242);
-//	ft_printf("ft\n%03.2d\n", 1); 
-//		printf("printf\n%03.2d\n", 1); 
-//	ft_printf("@moulitest: %#.x %#.0x\n", 0, 0);
-//	   printf("@moulitest: %#.x %#.0x\n", 0, 0);
-//	   ft_printf("%0+5d\n", 42);
-//	   printf("%0+5d\n", 42);
-//		ft_printf("%0-7d\n", -42);
-//		   printf("%0-7d\n", -42);
+//ft_printf("%s");
+//printf("%hd\n", 444444442);
+//ft_printf("%hd\n", 444444442);
+//ft_printf("ft\n%03.2d\n", 1); 
+//printf("\n%03.2d\n", 1); 
+//ft_printf("%0+5d\n", 42);
+//printf("%0+5d\n", 42);
+//ft_printf("%0-7d\n", -42);
+//printf("%0-7d\n", -42);
 //ft_printf("%+0.0d\n", 4242);
-//   printf("%+0.0d\n", 4242);
-//  ft_printf("%03.2d\n", -1);
- // printf("%03.2d\n", -1);
-//ft_printf("%5.2s\n", "coucou");
-//   ft_printf("%+ d\n", -42);
- //  printf("%+ d\n", -42);
- // ft_printf("dfsfdsfsgdsfgd%c  gtrwtrtwrwrt\n", 0);
-  //printf("%d\n", 'c');
-//	ft_printf("%03.2d\n", 1);
-//	   printf("%03.2d\n", 1); 
+//printf("%+0.0d\n", 4242);
+//ft_printf("%+ d\n", -42);
+//printf("%+ d\n", -42);
+//printf("%d\n", 'c');
+//ft_printf("%d\n", 'c');
 //	   ft_printf(" coucou %-+10d %.10d %-05d\n", 5, 7 , 9984455);
 //	   printf(" coucou %-+10d %.10d %-05d\n", 5, 7 , 9984455);
 //	ft_printf("@moulitest: %.10d\n", -42);
 //	   printf("@moulitest: %.10d\n", -42);
-//		ft_printf("@mouli11test: %5.c %5.0c\n", 0, 0);
-//		printf("@moulitest: %5.c %5.0c\n", 0, 0);
-	ft_printf("ft %07d\n", 1234);
-	printf("pr %07d\n", 1234);
 //		ft_printf("%03.2d\n", -1);
 //		   printf("%03.2d\n", -1);
-//		   ft_printf("%5d\n", -42);
-//		      printf("%5d\n", -42);
+//ft_printf("ft %07d\n", 1234);
+//	printf("pr %07d\n", 1234);
+//ft_printf("%+10.7d\n", 4242);//----------------
+//printf("%+10.7d\n", 4242);//---------
+//	ft_printf("%03.2d\n", 1);
+//	   printf("%03.2d\n", 1);
+//		   ft_printf("ft%5d\n", -42);//--------
+//		      printf("pr%5d\n", -42);//------
+  //	ft_printf("%03.2d\n", -1);
+//	 printf("%03.2d\n", -1);
+		   printf("ld = %ld\n", -100000000000);
+		ft_printf("ld = %ld\n", -100000000000);
+		   printf("z = %zd\n", -100000000000);
+		ft_printf("z = %zd\n", -100000000000);
+		   printf("j = %jd\n", -100000000000);
+		ft_printf("j = %jd\n", -100000000000);
+		   printf("h = %hd\n", -100000000000);
+		ft_printf("h = %hd\n", -100000000000);
+		ft_printf("ft %+05d\n", 7);
+		printf("pr %+05d\n", 7);
+//	ft_printf("@moulitest: %#.x %#.0x\n", 0, 0);
+//	   printf("@moulitest: %#.x %#.0x\n", 0, 0);
+//ft_printf("%5.2s\n", "coucou");
+ // ft_printf("dfsfdsfsgdsfgd%c  gtrwtrtwrwrt\n", 0);
+//		ft_printf("@mouli11test: %5.c %5.0c\n", 0, 0);
+//		printf("@moulitest: %5.c %5.0c\n", 0, 0);
 		//	ft_printf("%#08x\n", 42);
 		//		printf("%#08x\n", 42);
 		//	char *str = "coucou";
@@ -87,8 +98,8 @@ int main(void)
 		
 	//	   double i = 3.123456789;
 		//	ft_printf("coucou %s toi\n");
-/*		//	   printf("coucou %s toi\n");
-		ft_printf("%C\n", L'☂');
+		//	   printf("coucou %s toi\n");
+/*		ft_printf("%C\n", L'☂');
 		ft_printf("% Z \n", "test");
 		printf("% Z \n", "test");
 		ft_printf("%10.  Z\n");
@@ -101,17 +112,7 @@ int main(void)
 		ft_printf("ft hexa = %x\n", -999999999);
 		printf("pr hexa = %x\n", -999999999);
 */
-	/*	   printf("ld = %ld\n", -100000000000);
-		ft_printf("ld = %ld\n", -100000000000);
-		   printf("z = %zd\n", -100000000000);
-		ft_printf("z = %zd\n", -100000000000);
-		   printf("j = %jd\n", -100000000000);
-		ft_printf("j = %jd\n", -100000000000);*/
-//		   printf("h = %hd\n", -100000000000);
-//		ft_printf("h = %hd\n", -100000000000);
-		ft_printf("ft %+05d\n", 7);
-		printf("pr %+05d\n", 7);
-		ft_printf("\n");
+	//	ft_printf("\n");
 /*		ft_printf("ft--->%% %5% %%%");
 		ft_printf("\n");
 		ft_printf("ft--->%-5%");
@@ -139,6 +140,6 @@ int main(void)
 		ft_printf("ft_printf %%-05%%=> %05%  <\n");
 		printf("   printf %%-05%%=> %05% <\n");
 		ft_printf("----------------------------------------------------------------------\n");*/
-	/*	ft_printf("s: %s, p: %p, d:%d\n", "a string", &nbr, 42);
+		/*ft_printf("s: %s, p: %p, d:%d\n", "a string", &nbr, 42);
 		printf("s: %s, p: %p, d:%d\n", "a string", &nbr, 42);*/
 }
