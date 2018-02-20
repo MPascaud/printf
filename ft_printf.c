@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 16:03:47 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/19 18:48:30 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 15:49:06 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ int		ft_printf(char *blabla, ...)
 	char			*precision_str;
 	int				j;
 	int				point;
+	int				ret;
 
 	i = 0;
 	j = 0;
 	modulo = 0;
 	point = 0;
+	ret = 0;
 	variables = (t_variables*)malloc(sizeof(t_variables));
 	initialisation(variables);
 	va_start (args, blabla);
@@ -35,6 +37,7 @@ int		ft_printf(char *blabla, ...)
 		while (blabla[i] != '%' && blabla[i])
 		{
 			ft_putchar(blabla[i]);
+			ret++;
 			i++;
 		}
 		if (blabla[i] == '%')
@@ -123,9 +126,10 @@ int		ft_printf(char *blabla, ...)
 				printf("variables->precision = %d\n", variables->precision);
 				printf("variables->modificateur = %c\n", variables->modificateur);
 				printf("variables->specificateur = %c\n", variables->specificateur);*/
-				ft_argument(args, variables);
+				ret += ft_argument(args, variables);
 				initialisation(variables);				
 				modulo = 0;
+				point = 0;
 			}
 			
 		}
@@ -133,6 +137,7 @@ int		ft_printf(char *blabla, ...)
 			i++;
 	}
 	va_end (args);
-	return (0);
+//	printf("ret = %d\n", ret);
+	return (ret);
 }
 

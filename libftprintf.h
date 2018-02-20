@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/19 19:48:59 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 12:36:30 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,14 @@ typedef struct	s_variables
 	char	modificateur;
 	char	specificateur;
 }				t_variables;
-void		ft_string(va_list args, t_variables *variables);
-void		ft_character(va_list args, t_variables *variables);
+int		ft_unicharacter(va_list args, t_variables *variables);
+int		ft_string(va_list args, t_variables *variables);
+int		ft_character(va_list args, t_variables *variables);
 int			nombrechiffres(unsigned long long nb);
-void		ft_decimal(va_list args, t_variables *variables);
+int		ft_decimal(va_list args, t_variables *variables);
 void			initialisation(t_variables *variables);
-void			ft_argument(va_list args, t_variables *variables);
+int			ft_argument(va_list args, t_variables *variables);
 void		ft_cast(va_list args, t_variables *variables, intmax_t *tmp);
-void		ft_string(va_list args, t_variables *variables);
 //int				nombrechiffres(unsigned long long nb);
 //void    ft_putnbr(intmax_t *tmp, t_variables *variables);
 

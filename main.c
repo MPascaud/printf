@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/19 19:45:23 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 19:00:09 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@
 */
 int main()
 {
-//	setlocale(LC_ALL, "");
+	int		retour;
+
+	retour = 0;
+	setlocale(LC_ALL, "");
 //	wprintf(L"ο Δικαιοπολις εν αγρω εστιν\n");  // wide output
 //	freopen(NULL, "w", stdout);                 // lets me switch
 //	printf("ο Δικαιοπολις εν αγρω εστιν\n");    // byte output
@@ -58,10 +61,25 @@ int main()
 //	wchar_t *str = L"ჩ";
 //	printf("%50S", str);
 //	printf("%-30S", L"ჩ");
-	printf("%-8.7s%%%25.4d\n", "egestg", 1235);
-	ft_printf("%-8.7s%%%25.4d\n", "egestg", 1235);
+//	printf("%-8.7s%%%25.4d\n", "egestg", 1235);
+//	ft_printf("%-8.7s%%%25.4d\n", "egestg", 1235);
 //	ft_printf("%4.3s\n", "gtr");
 //	printf("%4.3s\n", "gtr");
+//	   printf("pr%%%-+7.3d1200%s\n", 1234, "1234");
+//	printf("retour = %d\n", retour);
+//	ft_printf("ft%%%-+7.3d1200%s\n", 1234, "1234");
+/*	ft_printf("ft avec%%%-+7.3d1200%s\n", 7894,  "1234");
+	printf("pr avec%%%-+7.3d1200%s\n", 7894,  "1234");
+	ft_printf("ft sans%%%-+7d1200%s\n", 7894,  "1234");
+	printf("pr sans%%%-+7d1200%s\n", 7894,  "1234");*/
+//	ft_printf("retour = %d\n", retour);
+//	ft_printf("ft%ls\n", L"qwertyuiop");<<<<<<---------------
+//	printf("pr%ls\n", L"qwertyuiop");<<<<<<<<<<----------------
+//	ft_printf("blabla%10c%d\n", 'a', 120);<<<<<<<<<<<<-----------
+	retour = ft_printf("%C\n", 12000);
+	printf("%d\n", retour);
+	retour = printf("%C\n", 12000);
+	ft_printf("%d\n", retour);
 	return (0);
 }
 
