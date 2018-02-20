@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 19:00:09 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 19:07:59 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int main()
 //	ft_printf("ft%ls\n", L"qwertyuiop");<<<<<<---------------
 //	printf("pr%ls\n", L"qwertyuiop");<<<<<<<<<<----------------
 //	ft_printf("blabla%10c%d\n", 'a', 120);<<<<<<<<<<<<-----------
-	retour = ft_printf("%C\n", 12000);
+	retour = ft_printf("%C\n", 63500);
 	printf("%d\n", retour);
-	retour = printf("%C\n", 12000);
+	retour = printf("%C\n", 63500);
 	ft_printf("%d\n", retour);
 	return (0);
 }
