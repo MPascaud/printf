@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 19:08:40 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 20:30:49 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,81 @@
 #include "libftprintf.h"
 
 
+
+int		ft_unisize(wchar_t c)
+{
+	int		ret;
+
+	ret = 0;
+	if (c <= 127)
+		ret = ft_size_one(c);
+	if (c >= 128 && c <= 2047)
+		ret = ft_size_two(c);
+	if (c >= 2048 && c <= 65535)
+		ret = ft_size_three(c);
+	if (c >= 65536)
+		ret = ft_size_four(c);
+
+	return (ret);
+}
+
+
+int		ft_unistring(va_list args, t_variables *variables)
+{
+	int		ret;
+	wchar_t	*tmp;
+	wchar_t	i;
+	int		len;
+
+	i = 0;
+	ret = 0;
+	len = 0;
+	tmp = (wchar_t*)va_arg(args, wchar_t*);
+	while (tmp[len])
+	{
+		if (tmp[i] <= 127)
+			len++;
+		if (tmp[i] >= 128 && tmp[i] <= 2047)
+			len += 2;
+		if (tmp[i] >= 2048 && tmp[i] <= 65535)
+			len += 3;
+		if (tmp[i] >= 65536)
+			len += 4;
+		i++;
+	}
+	i = 0;
+//	ft_printf("len = %d\n", len);
+	if (variables->moins == 0)
+	{
+		while ((i + len) < variables->gabarit)
+		{
+			write(1, " ", 1);
+			ret++;
+			i++;
+		}
+		i = 0;
+		while (i < len)
+		{
+			ret += ft_unisize(tmp[i]);
+			i++;
+		}
+	}
+	if (variables->moins == 1)
+	{
+		while (i < len)
+		{
+			ret += ft_unisize(tmp[i]);
+			i++;
+		}
+		while (i < variables->gabarit)
+		{
+			write(1, " ", 1);
+			ret++;
+			i++;
+		}
+	}
+	return (ret);
+}
 
 
 int		ft_argument(va_list args, t_variables *variables)
@@ -30,6 +105,8 @@ int		ft_argument(va_list args, t_variables *variables)
 		ret = ft_string(args, variables);
 	if (variables->specificateur == 'C')
 		ret = ft_unicharacter(args, variables);
+	if (variables->specificateur == 'S')
+		ret = ft_unistring(args, variables);
 	return (ret);
 }
 

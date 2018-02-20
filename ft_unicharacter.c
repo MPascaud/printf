@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 19:06:42 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 20:07:22 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ int		ft_size_two(wchar_t c)
 	return (2);
 }
 
+int		ft_size_one(wchar_t c)
+{
+	ft_putchar(c);
+	return (1);
+}
 
 int		ft_unicharacter(va_list args, t_variables *variables)
 {
