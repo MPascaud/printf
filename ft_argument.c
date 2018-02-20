@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 20:30:49 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/20 21:21:35 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_unisize(wchar_t c)
 		ret = ft_size_three(c);
 	if (c >= 65536)
 		ret = ft_size_four(c);
-
 	return (ret);
 }
 
@@ -38,13 +37,15 @@ int		ft_unistring(va_list args, t_variables *variables)
 	int		ret;
 	wchar_t	*tmp;
 	wchar_t	i;
-	int		len;
+	wchar_t	len;
+	wchar_t gabarit;
 
+	gabarit = (wchar_t)variables->gabarit;
 	i = 0;
 	ret = 0;
 	len = 0;
 	tmp = (wchar_t*)va_arg(args, wchar_t*);
-	while (tmp[len])
+	while (tmp[i])
 	{
 		if (tmp[i] <= 127)
 			len++;
@@ -60,6 +61,7 @@ int		ft_unistring(va_list args, t_variables *variables)
 //	ft_printf("len = %d\n", len);
 	if (variables->moins == 0)
 	{
+		//printf("i = %d, len = %d, variables->gabarit = %d\n", i, len, variables->gabarit);
 		while ((i + len) < variables->gabarit)
 		{
 			write(1, " ", 1);
@@ -67,7 +69,7 @@ int		ft_unistring(va_list args, t_variables *variables)
 			i++;
 		}
 		i = 0;
-		while (i < len)
+		while (tmp[i])
 		{
 			ret += ft_unisize(tmp[i]);
 			i++;
@@ -75,12 +77,13 @@ int		ft_unistring(va_list args, t_variables *variables)
 	}
 	if (variables->moins == 1)
 	{
-		while (i < len)
+		while (tmp[i])
 		{
 			ret += ft_unisize(tmp[i]);
 			i++;
 		}
-		while (i < variables->gabarit)
+		i = 0;
+		while ((i + len) < variables->gabarit)
 		{
 			write(1, " ", 1);
 			ret++;
