@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/21 14:02:12 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/21 15:39:41 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ int main()
 	printf("pr sans%%%-+7d1200%s\n", 7894,  "1234");*/
 //	ft_printf("ft%s\n", L"qwertyuiop");
 //	printf("pr%s\n", L"qwertyuiop");
-	retour = ft_printf("ft%ls\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
-	printf("%d\n", retour);
-	retour = printf("pr%ls\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
-	printf("%d\n", retour);
-	retour = ft_printf("ft%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
-	printf("%d\n", retour);
-	retour = printf("pr%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
-	printf("%d\n", retour);
+//	retour = ft_printf("ft%.0s\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+//	printf("%d\n", retour);
+//	retour = printf("pr%.0s\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+//	printf("%d\n", retour);
+//	retour = ft_printf("ft%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+//	printf("%d\n", retour);
+//	retour = printf("pr%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+//	printf("%d\n", retour);
 //	ft_printf("blabla%10c%d\n", 'a', 120);//<<<<<<<<<<<<-----------
 //	printf("blabla%10c%d\n", 'a', 120);//<<<<<<<<<<<<-----------
 //	retour = ft_printf("ft%S\n", L"dfvdfbv");
@@ -90,6 +90,53 @@ int main()
 	ft_printf("%d\n", retour);
 	retour = ft_printf("ft%10S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤ 6 ♫");
 	ft_printf("%d\n", retour);*/
+//	printf("pr%llD\n", -1000000000000000);
+//    printf("pr%lD\n", -1000000000000000);
+//	printf("pr%D\n", -1000000000000000);
+//	printf("pr%llD\n", -1000);
+//	printf("pr%lD\n", -1000);
+//	printf("pr%D\n", -1000);
+//	printf("pr%lld\n", -1000000000000000);
+//  printf("pr%ld\n", -1000000000000000);
+//	printf("pr%d\n", -1000000000000000);
+//	printf("pr%lld\n", -1000);
+//	printf("pr%ld\n", -1000);
+//	printf("pr%d\n", -1000);
+//	ft_printf("ft%hhD\n", -1000000000000000);
+//	ft_printf("pr%hhD\n", -1000);
+//  ft_printf("ft%lD\n", -1000000000000000);
+//	ft_printf("ft%D\n", -1000000000000000);
+//	ft_printf("ft%llD\n", -1000);
+//	ft_printf("ft%lD\n", -1000);
+//	ft_printf("ft%D\n", -1000);
+//	ft_printf("ft%lld\n", -1000000000000000);
+//  ft_printf("ft%ld\n", -1000000000000000);
+//	ft_printf("ft%d\n", -1000000000000000);
+//	ft_printf("ft%lld\n", -1000);
+//	ft_printf("ft%ld\n", -1000);
+//	ft_printf("ft%d\n", -1000);
+//	printf("pr%hhD\n", -1000000000000000);
+//	printf("pr%hhD\n", -1000);
+//	ft_printf("ft%llD\n", -100000000000000000000000);
+//	printf("pr%c\n", 0x170);
+//	ft_printf("ft%c\n", 0x170);
+	printf("pr%lc\n", 0x170);
+	ft_printf("ft%lc\n", 0x170);
+	printf("pr%C\n", 0x170);
+	ft_printf("ft%C\n", 0x170);
+/*	printf("pr%C\n", 0x170);
+	ft_printf("ft%C\n", 0x170);
+	printf("pr%lC\n", 0x170);
+	ft_printf("ft%lC\n", 0x170);
+	printf("pr%c\n", L'0x170');
+	ft_printf("ft%c\n", L'0x170');
+	printf("pr%lc\n", L'0x170');
+	ft_printf("ft%lc\n", L'0x170');
+	printf("pr%C\n", L'0x170');
+	ft_printf("ft%C\n", L'0x170');
+	printf("pr%lC\n", L'0x170');
+	ft_printf("ft%lC\n", L'0x170');*/
+
 	return (0);
 }
 

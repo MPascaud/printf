@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 12:26:01 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/21 15:12:28 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,26 @@
 
 int		ft_decimal(va_list args, t_variables *variables)
 {
-	int					cast;
+	//int					cast;
    	intmax_t				tmp;
 	int					nbchiffres;
 	int					i;
 	int					j;
 	int					ret;
 
-	cast = 0;
+	//cast = 0;
 	i = 0;
 	j = 0;
 	ret = 0;
 //	tmp = va_arg(args, long int);
 //	printf("1--->%lld\n", tmp);
-	if (variables->modificateur != 'a')
-	{
+	if (variables->modificateur != 'a' && variables->specificateur != 'D')
 		ft_cast(args, variables, &tmp);
-		cast = 1;
-	}
-	else
-	{
+		//cast = 1;
+	if (variables->modificateur == 'a' && variables->specificateur != 'D')
 		tmp = va_arg(args, int);
-	}
+	if (variables->specificateur == 'D')
+		tmp = va_arg(args, long int);
 //	printf("2--->%lld\n", tmp);
 	nbchiffres = nombrechiffres(tmp);
 //	printf("nbchiffres = %d\n", nbchiffres);
