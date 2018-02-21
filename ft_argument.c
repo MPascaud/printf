@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 21:21:35 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/21 13:57:40 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,11 @@ int		ft_argument(va_list args, t_variables *variables)
 		ret = ft_decimal(args, variables);
 	if (variables->specificateur == 'c')
 		ret = ft_character(args, variables);
-	if (variables->specificateur == 's')
+	if (variables->specificateur == 's' && variables->modificateur != 'l')
 		ret = ft_string(args, variables);
 	if (variables->specificateur == 'C')
 		ret = ft_unicharacter(args, variables);
-	if (variables->specificateur == 'S')
+	if (variables->specificateur == 'S' || (variables->specificateur == 's' && variables->modificateur == 'l'))
 		ret = ft_unistring(args, variables);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 21:26:10 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/21 14:02:12 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,18 @@ int main()
 	printf("pr avec%%%-+7.3d1200%s\n", 7894,  "1234");
 	ft_printf("ft sans%%%-+7d1200%s\n", 7894,  "1234");
 	printf("pr sans%%%-+7d1200%s\n", 7894,  "1234");*/
-	ft_printf("ft%ls\n", L"qwertyuiop");//<<<<<<---------------
-	printf("pr%ls\n", L"qwertyuiop");//<<<<<<<<<<----------------
-	ft_printf("blabla%10c%d\n", 'a', 120);//<<<<<<<<<<<<-----------
+//	ft_printf("ft%s\n", L"qwertyuiop");
+//	printf("pr%s\n", L"qwertyuiop");
+	retour = ft_printf("ft%ls\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+	printf("%d\n", retour);
+	retour = printf("pr%ls\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+	printf("%d\n", retour);
+	retour = ft_printf("ft%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+	printf("%d\n", retour);
+	retour = printf("pr%S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤");
+	printf("%d\n", retour);
+//	ft_printf("blabla%10c%d\n", 'a', 120);//<<<<<<<<<<<<-----------
+//	printf("blabla%10c%d\n", 'a', 120);//<<<<<<<<<<<<-----------
 //	retour = ft_printf("ft%S\n", L"dfvdfbv");
 //	printf("%d\n", retour);
 	/*retour = printf("pr%10S\n", L"dfvdfbv1 ☂ 2 € 3 ☯ 4 ∞ 5 ❤ 6 ♫");
