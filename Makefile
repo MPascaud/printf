@@ -6,7 +6,7 @@
 #    By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/13 16:02:42 by mpascaud          #+#    #+#              #
-#    Updated: 2018/02/20 19:46:46 by mpascaud         ###   ########.fr        #
+#    Updated: 2018/02/22 19:39:55 by mpascaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c f
 	  ft_lstiter.c ft_lstmap.c \
 	  unicode.c ft_printf.c afficherbinaire.c initialisation.c ft_argument.c ft_cast.c \
 	  ft_decimal.c nombrechiffres.c ft_character.c ft_string.c ft_unicharacter.c \
+	  ft_unistring.c ft_unsigned.c
 
 
 BIN = $(SRC:.c=.o)

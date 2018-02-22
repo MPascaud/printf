@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 20:08:34 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/22 19:39:29 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ char			*ft_itoa(int n);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
-void			ft_putnbr(intmax_t nb);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
@@ -104,6 +103,10 @@ typedef struct	s_variables
 	char	modificateur;
 	char	specificateur;
 }				t_variables;
+void    ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, int tmp);
+int		ft_unsigned(va_list args, t_variables *variables);
+void	ft_unsigned_cast(va_list args, t_variables *variables, uintmax_t *tmp);
+void			ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp);
 int		ft_size_one(wchar_t c);
 int		ft_size_two(wchar_t c);
 int		ft_size_three(wchar_t c);
@@ -112,7 +115,7 @@ int		ft_unicharacter(va_list args, t_variables *variables);
 int		ft_unistring(va_list args, t_variables *variables);
 int		ft_string(va_list args, t_variables *variables);
 int		ft_character(va_list args, t_variables *variables);
-int			nombrechiffres(unsigned long long nb);
+int			nombrechiffres(unsigned long long nb, t_variables *variables);
 int		ft_decimal(va_list args, t_variables *variables);
 void			initialisation(t_variables *variables);
 int			ft_argument(va_list args, t_variables *variables);

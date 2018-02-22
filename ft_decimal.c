@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/21 15:12:28 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/22 15:00:04 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 {
 	//int					cast;
    	intmax_t				tmp;
+ //  unsigned long long int	tmp;
 	int					nbchiffres;
 	int					i;
 	int					j;
@@ -32,13 +33,17 @@ int		ft_decimal(va_list args, t_variables *variables)
 	if (variables->modificateur != 'a' && variables->specificateur != 'D')
 		ft_cast(args, variables, &tmp);
 		//cast = 1;
-	if (variables->modificateur == 'a' && variables->specificateur != 'D')
+	if (variables->modificateur == 'a' && (variables->specificateur == 'd' || variables->specificateur == 'i') )
 		tmp = va_arg(args, int);
+//	if (variables->specificateur == 'o' && variables->modificateur != 'l')
+//		tmp = va_arg(args, unsigned int);
 	if (variables->specificateur == 'D')
 		tmp = va_arg(args, long int);
-//	printf("2--->%lld\n", tmp);
-	nbchiffres = nombrechiffres(tmp);
+//	if (variables->specificateur == 'o' && variables->modificateur == 'l')
+//		tmp = va_arg(args, unsigned long);
+	nbchiffres = nombrechiffres(tmp, variables);
 //	printf("nbchiffres = %d\n", nbchiffres);
+//	printf("test%llo\n", tmp);
 	if (variables->moins == 0)
 	{
 		if ((variables->espace == 1 || variables->plus == 1) && tmp >= 0)
@@ -63,7 +68,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 			write(1, " ", 1);
 			ret++;
 		}
-		if (tmp < 0)
+		if (tmp < 0 /*&& variables->specificateur != 'o'*/)
 		{
 			write(1, "-", 1);
 			tmp = -tmp;
@@ -79,7 +84,9 @@ int		ft_decimal(va_list args, t_variables *variables)
 			ret++;
 			i++;
 		}
-		ft_putnbr(tmp);
+	//	printf("avant%llo\n", tmp);
+		ft_putnbr(tmp, variables, nbchiffres, 0);
+	//	printf("apres%llo\n", tmp);
 		ret += nbchiffres;
 
 	}
@@ -113,7 +120,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 			ret++;
 			i++;
 		}
-		ft_putnbr(tmp);
+		ft_putnbr(tmp, variables, nbchiffres, 0);
 		ret += nbchiffres;
 		i += nbchiffres;
 //		printf("i = %d\n", i);
