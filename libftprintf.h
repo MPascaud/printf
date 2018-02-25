@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 15:34:58 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 17:45:15 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ typedef struct	s_variables
 }				t_variables;
 void    ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, int tmp);
 int		ft_unsigned(va_list args, t_variables *variables);
+int		ft_unsigned_hexa(va_list args, t_variables *variables);
 void	ft_unsigned_cast(va_list args, t_variables *variables, uintmax_t *tmp);
 void			ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp);
 int		ft_size_one(wchar_t c);
