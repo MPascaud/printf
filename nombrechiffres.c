@@ -6,12 +6,41 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 21:51:47 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 15:28:47 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libftprintf.h"
+
+
+int		signed_nombrechiffres(intmax_t nb, t_variables *variables)
+{
+	int		result;
+	int		tmp;
+	int		base;
+
+	if (variables->specificateur == 'd' || variables->specificateur == 'i' || variables->specificateur == 'D' || variables->specificateur == 'u')
+		base = 10;
+	if (variables->specificateur == 'o' || variables->specificateur == 'O')
+		base = 8;
+	if (variables->specificateur == 'x' || variables->specificateur == 'X')
+		base = 16;
+	result = 1;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		nb = -nb;
+	while (nb >= base)
+	{
+		nb /= base;
+		result++;
+	}
+	return (result);
+}
+
+
+
 
 int		nombrechiffres(unsigned long long nb, t_variables *variables)
 {
@@ -28,6 +57,7 @@ int		nombrechiffres(unsigned long long nb, t_variables *variables)
 		base = 16;
 	result = 1;
 	tmp = (int)nb;
+//	printf("tmp = %d, nb = %d\n", tmp, nb);
 //	tmp = nb;	
 	if (nb == 0)
 		return (1);
@@ -38,6 +68,7 @@ int		nombrechiffres(unsigned long long nb, t_variables *variables)
 	}*/
 	while (nb >= base)
 	{
+	//	printf("nb = %d, base = %d, nbchiffres = %d\n", nb, base, result);
 		nb /= base;
 		result++;
 	}
@@ -48,6 +79,8 @@ int		nombrechiffres(unsigned long long nb, t_variables *variables)
 	}*/
 	if ((variables->specificateur == 'o' || variables->specificateur == 'O') && variables->diese == 1)
 		result++;
+//	if ((variables->specificateur == 'x' || variables->specificateur == 'X') && variables->diese == 1)
+//		result += 2;
 	return (result);
 }
 

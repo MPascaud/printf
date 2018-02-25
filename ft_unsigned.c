@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 22:57:36 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 15:28:06 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, in
 		base = 8;
 	if (variables->specificateur == 'x' || variables->specificateur == 'X')
 		base = 16;
-	if ((variables->specificateur == 'o' || variables->specificateur == 'O' || variables->specificateur == 'x' || variables->specificateur == 'X') && tmp == 0 && variables->diese == 1)
+	if ((variables->specificateur == 'o' || variables->specificateur == 'O') && tmp == 0 && variables->diese == 1)
 	{
 		write(1, "0", 1);
 	/*	if (variables->specificateur == 'x')
@@ -74,7 +74,7 @@ int		ft_unsigned(va_list args, t_variables *variables)
 //	if (variables->specificateur == 'X')
 //		write(1, "0X", 2);
 
-//	printf("nbchiffres = %d\n", nbchiffres);
+	printf("nbchiffres = %d\n", nbchiffres);
 	if (variables->moins == 0)
 	{
 		if (variables->espace == 1 || variables->plus == 1)
@@ -86,6 +86,14 @@ int		ft_unsigned(va_list args, t_variables *variables)
 			ret++;
 			i++;
 		}
+		/*if (variables->diese == 1 && (variables->specificateur == 'x' || variables->specificateur == 'X'))
+		{
+			if (variables->specificateur == 'x')
+				write(1, "0x", 2);
+			if (variables->specificateur == 'X')
+				write(1, "0X", 2);
+			i += 2;
+		}*/
 		if (variables->plus == 1)
 		{
 			write(1, "+", 1);
@@ -95,7 +103,7 @@ int		ft_unsigned(va_list args, t_variables *variables)
 		i = 0;
 		while (((i < variables->precision - nbchiffres) || (j + i + nbchiffres) < variables->gabarit))
 		{
-			write(1, " ", 1);
+			write(1, "0", 1);
 			ret++;
 			i++;
 		}
@@ -118,8 +126,17 @@ int		ft_unsigned(va_list args, t_variables *variables)
 			i++;
 		if (variables->plus == 0)
 			i++;
+		/*if (variables->diese == 1 && (variables->specificateur == 'x' || variables->specificateur == 'X'))
+		{
+			if (variables->specificateur == 'x')
+				write(1, "0x", 2);
+			if (variables->specificateur == 'X')
+				write(1, "0X", 2);
+			i += 2;
+		}*/
 		while (i <= (variables->precision - nbchiffres))
 		{
+			write(1, "0", 1);
 			//if (variables->specificateur != 'x' && variables->specificateur != 'X')
 			//	write(1, " ", 1);
 			//if (variables->specificateur == 'x' || variables->specificateur == 'X')

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 22:58:56 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 17:26:25 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,14 +148,14 @@ retour = ft_printf("ft1%# -32o\n", 11000);
    printf("retour = %d\n", retour);
   retour = ft_printf("ft2%#0o\n", -1100000000000);
    printf("retour = %d\n", retour);*/
-     printf("pr3%lo\n", -11000500000000000000);
+ /*    printf("pr3%lo\n", -11000500000000000000);
    ft_printf("ft3%lo\n", -11000500000000000000);
       printf("pr3%lo\n", -2147483648);
    ft_printf("ft3%lo\n", -2147483648);
      printf("pr3%lo\n", -11000500);
   ft_printf("ft3%lo\n", -11000500);
    printf("pr%lo\n",110);
- ft_printf("ft%lo\n", 110);
+ ft_printf("ft%lo\n", 110);*/
    /*  printf("pr%-52.9lu\n", -11000000000000);
    ft_printf("ft%-52.9lu\n", -11000000000000);
       printf("pr%-52.9lu\n", 11000000000000);
@@ -186,25 +186,43 @@ retour = ft_printf("ft1%# -32o\n", 11000);
    ft_printf("ft%-52.9X\n", 11000000000000);*/
  //  printf("pr%#052.9lu\n", 110);
  // ft_printf("ft%#052.9lu\n", 110);
- /*     printf("pr%lo\n", -11000000000000);
-   ft_printf("ft%lo\n", -11000000000000);
-      printf("pr%lo\n", 11000000000000);
-   ft_printf("ft%lo\n", 11000000000000);
-   printf("pr%lo\n", 110);
-  ft_printf("ft%lo\n", 110);*/
+  /*  printf("pr%50.3d\n", 50000000000000);
+ ft_printf("ft%50.3d\n", 50000000000000);
+    printf("pr%50.3d\n", 5000000);
+ ft_printf("ft%50.3d\n", 5000000);*/
+/*      printf("pr%#-50.5o\n", -100);
+   ft_printf("ft%#-50.5o\n", -100);
+      printf("pr%#-50.5o\n", 110);
+   ft_printf("ft%#-50.5o\n", 110);
+    printf("pr%#-50.5o\n", 11000);
+ ft_printf("ft%#-50.5o\n", 11000);
+      printf("pr%#50.5o\n", -100);
+   ft_printf("ft%#50.5o\n", -100);
+      printf("pr%#50.5o\n", 110);
+   ft_printf("ft%#50.5o\n", 110);
+    printf("pr%#50.5o\n", 11000);
+ ft_printf("ft%#50.5o\n", 11000);*/
+   /*   printf("pr% 50.5ld\n", -100);
+   ft_printf("ft% 50.5ld\n", -100);
+      printf("pr% 50.5ld\n", 110);
+   ft_printf("ft% 50.5ld\n", 110);
+    printf("pr% 50.5ld\n", 11000000000000000);
+ ft_printf("ft% 50.5ld\n", 11000000000000000);*/
+//----------------------------
+	    printf("pr%.30lX\n", -100000000000);
+     ft_printf("ft%.30lX\n", -100000000000);
+      printf("pr%.30lX\n", 110000000000);
+   ft_printf("ft%.30lX\n", 110000000000);
+    printf("pr%.30lX\n", 11000000000000000);
+ ft_printf("ft%.30lX\n", 11000000000000000);
+      printf("pr%#-.30lX\n", -100000000000000);
+   ft_printf("ft%#-.30lX\n", -100000000000000);
+      printf("pr%#-.30lX\n", 110000000000000);
+   ft_printf("ft%#-.30lX\n", 110000000000000);
+    printf("pr%#-.30lX\n", 110000000000);
+ ft_printf("ft%#-.30lX\n", 110000000000);
 	return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:02:32 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 19:39:29 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 15:34:58 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int		ft_unistring(va_list args, t_variables *variables);
 int		ft_string(va_list args, t_variables *variables);
 int		ft_character(va_list args, t_variables *variables);
 int			nombrechiffres(unsigned long long nb, t_variables *variables);
+int		signed_nombrechiffres(intmax_t nb, t_variables *variables);
 int		ft_decimal(va_list args, t_variables *variables);
 void			initialisation(t_variables *variables);
 int			ft_argument(va_list args, t_variables *variables);
