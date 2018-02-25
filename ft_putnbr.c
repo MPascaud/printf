@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:24:37 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 20:58:03 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 21:48:59 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void	ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp)
 
 	table = "0123456789abcdef";
 	base = 10;
+	if (variables->precision == 0 && nb == 0)
+	{
+	//	write(1, " ", 1);
+		return ;
+	}
 //	printf("modificateur = %c, specificateur = %c, nbchiffres = %d, nb en o : %o\n", variables->modificateur, variables->specificateur, nbchiffres, nb);
 	if (variables->specificateur == 'o')
 		base = 8;
@@ -53,7 +58,7 @@ void	ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp)
 	if (nb < 0 /*&& variables->specificateur != 'o'*/)
 	{
 		ft_putchar('-');
-		if (nb == -9223372036854775808)
+		if (nb < -9223372036854775807)
 		{
 			ft_putchar('9');
 			nb = -223372036854775808;

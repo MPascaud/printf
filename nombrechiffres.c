@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 19:45:41 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 21:58:26 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int		signed_nombrechiffres(intmax_t nb, t_variables *variables)
 		base = 16;
 	result = 1;
 	if (nb == 0)
+	{
+		if (variables->precision == 0)
+			return (0);
 		return (1);
+	}
 	if (nb < 0)
 		nb = -nb;
 	while (nb >= base)
@@ -60,7 +64,9 @@ int		nombrechiffres(unsigned long long nb, t_variables *variables)
 //	printf("tmp = %d, nb = %d\n", tmp, nb);
 //	tmp = nb;	
 	if (nb == 0)
+	{
 		return (1);
+	}
 /*	while (tmp != 0)
 	{
 		tmp /= base;

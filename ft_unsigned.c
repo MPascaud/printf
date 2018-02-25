@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 19:26:45 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 22:08:58 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, in
 			write(1, "X", 1);*/
 		tmp = 1;
 	}
+	if (variables->precision == 0 && nb == 0)
+		return ;
 //	printf("base = %d\n", base);
 	if (nb >= base)
 	{
@@ -74,7 +76,7 @@ int		ft_unsigned(va_list args, t_variables *variables)
 //	if (variables->specificateur == 'X')
 //		write(1, "0X", 2);
 
-	printf("nbchiffres = %d\n", nbchiffres);
+//	printf("nbchiffres = %d\n", nbchiffres);
 	if (variables->moins == 0)
 	{
 		if (variables->espace == 1 || variables->plus == 1)
@@ -94,7 +96,7 @@ int		ft_unsigned(va_list args, t_variables *variables)
 				write(1, "0X", 2);
 			i += 2;
 		}*/
-		if (variables->plus == 1)
+		if (variables->plus == 1 && variables->specificateur != 'u' && variables->specificateur != 'U')
 		{
 			write(1, "+", 1);
 			ret++;

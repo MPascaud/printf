@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 20:59:04 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 22:14:42 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,10 +223,35 @@ retour = ft_printf("ft1%# -32o\n", 11000);
  ft_printf("ft%#-.30lX\n", 110000000000);*/
 
 //	printf("retour = %d\n", retour);
-	ft_printf("ft%lld\n", -9223372036854775808);
-	ft_printf("%d\n", -546);
-	printf("pr%lld\n", -9223372036854775808);
+//	ft_printf("ft%lld\n", -9223372036854775808);
+//	ft_printf("%d\n", -546);
+//	printf("pr%lld\n", -9223372036854775808);
 //	ft_printf("retour = %d\n", retour);
+//	ft_printf("@moulitest: %.5u", 42);
+//	ft_printf("ft@moulitest: %5.d %5.0d\n", 0, 0);
+//	printf("pr@moulitest: %5.d %5.0d\n", 0, 0);
+//	ft_printf("ft@moulitest: %5d %5d\n", 0, 0);
+//	printf("pr@moulitest: %5d %5d\n", 0, 0);
+/*	retour = ft_printf("ft@moulitest: %.d %.0d\n", 0, 0);
+	printf("retour = %d\n", retour);
+	retour = printf("pr@moulitest: %.d %.0d\n", 0, 0);
+	printf("retour = %d\n", retour);*/
+//	retour = ft_printf("ft@moulitest: %+.d %+.0d\n", 0, 0);
+//	printf("retour = %d\n", retour);
+//	retour = printf("pr@moulitest: %+.d %+.0d\n", 0, 0);
+//	printf("retour = %d\n", retour);
+//	printf("%.d", 0);
+//	printf("pr@moulitest: %d %0d\n", 0, 0);
+//    retour = ft_printf("ft@moulitest: %#.o %#.0o\n", 0, 0);
+//	printf("retour = %d\n", retour);
+//	retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
+//	printf("retour = %d\n", retour);
+//	retour = ft_printf("ft@moulitest: %#.o %#.0o\n", 1, 1);
+//	printf("retour = %d\n", retour);
+//	retour = printf("pr@moulitest: %#.o %#.0o\n", 1, 1);
+//	printf("retour = %d\n", retour);
+    ft_printf("%#8x", 42);	
+//	printf("retour = %d\n", retour);
 	return (0);
 }
 

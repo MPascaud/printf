@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 21:03:54 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 21:59:23 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 //	if (variables->specificateur == 'o' && variables->modificateur == 'l')
 //		tmp = va_arg(args, unsigned long);
 	nbchiffres = signed_nombrechiffres(tmp, variables);
+//	printf("nombre : %d\n", tmp);
 //	printf("nbchiffres = %d\n", nbchiffres);
 //	printf("test%llo\n", tmp);
 	if (variables->moins == 0)
@@ -88,6 +89,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 		ft_putnbr(tmp, variables, nbchiffres, 0);
 	//	printf("apres%llo\n", tmp);
 		ret += nbchiffres;
+//		printf("nombrechiffres = %d\n", nbchiffres);
 
 	}
 	if (variables->moins == 1)
