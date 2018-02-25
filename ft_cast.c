@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:40:03 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 20:49:24 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 19:55:28 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_unsigned_cast(va_list args, t_variables *variables, uintmax_t *tmp)
 	if (variables->modificateur == 'j')
 		*tmp = (uintmax_t)va_arg(args, uintmax_t);
 	if (variables->modificateur == 'z')
-		*tmp = (size_t)va_arg(args, size_t);	
+		*tmp = (size_t)va_arg(args, size_t);
 }
 
 

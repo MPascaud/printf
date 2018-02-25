@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 15:28:06 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 19:26:45 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, in
 //	printf("COUCOU ||| nb = %x\n", nb);
 	if (variables->specificateur == 'o' || variables->specificateur == 'O')
 		base = 8;
-	if (variables->specificateur == 'x' || variables->specificateur == 'X')
+	if (variables->specificateur == 'x' || variables->specificateur == 'X' || variables->specificateur == 'p')
 		base = 16;
 	if ((variables->specificateur == 'o' || variables->specificateur == 'O') && tmp == 0 && variables->diese == 1)
 	{
