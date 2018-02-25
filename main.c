@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 20:22:32 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 20:59:04 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,9 +221,11 @@ retour = ft_printf("ft1%# -32o\n", 11000);
    ft_printf("ft%#-.30lX\n", 110000000000000);
     printf("pr%#-.30lX\n", 110000000000);
  ft_printf("ft%#-.30lX\n", 110000000000);*/
-	retour = printf("%-p\n", &retour);
+
 //	printf("retour = %d\n", retour);
-	retour = ft_printf("%-p\n", &retour);
+	ft_printf("ft%lld\n", -9223372036854775808);
+	ft_printf("%d\n", -546);
+	printf("pr%lld\n", -9223372036854775808);
 //	ft_printf("retour = %d\n", retour);
 	return (0);
 }

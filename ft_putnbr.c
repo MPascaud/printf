@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:24:37 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/22 16:09:56 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/25 20:58:03 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp)
 	if (nb < 0 /*&& variables->specificateur != 'o'*/)
 	{
 		ft_putchar('-');
-		if (nb == -2147483648)
+		if (nb == -9223372036854775808)
 		{
-			ft_putchar('2');
-			nb = -147483648;
+			ft_putchar('9');
+			nb = -223372036854775808;
 		}
 		nb = -nb;
 	}
