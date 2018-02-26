@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 14:59:50 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 15:06:49 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,12 +272,15 @@ retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 	retour = printf("pr%#6o\n", 2500);
 	printf("retour = %d\n", retour);*/
 //	retour = ft_printf("ft@moulitest: %#.o %#.0o\n", 0, 0);
-retour = ft_printf("ft%s\n", NULL);
-	printf("retour = %d\n", retour);
-retour = printf("pr%s\n", NULL);
-	printf("retour = %d\n", retour);
-	//printf("retour = %d\n", retour);
+//retour = ft_printf("ft%s\n", NULL);
+//	printf("retour = %d\n", retour);
+//retour = printf("pr%s\n", NULL);
+//	printf("retour = %d\n", retour);
 //	retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
+	retour = ft_printf("ft@moulitest: %#.x %#.0x\n", 0, 0);
+	printf("retour = %d\n", retour);
+	retour = printf("pr@moulitest: %#.x %#.0x\n", 0, 0);
+	printf("retour = %d\n", retour);
 	return (0);
 }
 
