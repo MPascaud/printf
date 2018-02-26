@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 16:03:47 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 16:10:07 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 17:13:14 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ int		ft_printf(char *blabla, ...)
 			i++;
 	}
 	va_end (args);
+	free(variables);
 //	printf("ret = %d\n", ret);
 	return (ret);
 }
