@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 15:15:14 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 15:18:51 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -279,15 +279,18 @@ retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 //	retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 //	retour = ft_printf("ft@moulitest: %#.x %#.0x\n", 0, 0);
 //	retour = printf("pr@moulitest: %#.x %#.0x\n", 0, 0);
-//	printf("retour = %d\n", retour);
 /*	ft_printf("ft%5%\n");
 	printf("pr%5%\n");
 	ft_printf("ft%-5%\n");
 	printf("pr%-5%\n");*/
-	retour = ft_printf("%-15x\n", 542);
-printf("retour = %d\n", retour);
-	retour = printf("%-15x\n", 542);
-printf("retour = %d\n", retour);
+//	retour = ft_printf("%-15x\n", 542);
+//printf("retour = %d\n", retour);
+//	retour = printf("%-15x\n", 542);
+//printf("retour = %d\n", retour);
+	retour = ft_printf("ft%#x\n", 42);
+	printf("ft retour = %d\n", retour);
+	retour = printf("pr%#x\n", 42);
+	printf("pr retour = %d\n", retour);
 	return (0);
 }
 
