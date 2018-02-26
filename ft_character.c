@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 16:13:55 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/20 12:28:59 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 18:07:35 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int    ft_character(va_list args, t_variables *variables)
 	{
 		while (i < variables->gabarit)
 		{
-			write(1, " ", 1);
+			if (variables->zero == 0)
+				write(1, " ", 1);
+			if (variables->zero == 1)
+				write(1, "0", 1);
 			ret++;
 			i++;
 		}

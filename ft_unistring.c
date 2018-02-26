@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/21 16:17:35 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 18:49:38 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int		ft_unistring(va_list args, t_variables *variables)
 	ret = 0;
 	len = 0;
 	tmp = (wchar_t*)va_arg(args, wchar_t*);
+	if (tmp == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (tmp[i])
 	{
 		if (tmp[i] <= 127)

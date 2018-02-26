@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 16:22:29 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 18:51:24 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,10 +303,43 @@ retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 //	printf("pr%hhd\n", 128);
 //	ft_printf("ft%d\n", 128);
 //	printf("pr%d\n", 128)
-	retour = ft_printf("ft%lld\n", -9223372036854775808);
-	printf("ft retour = %d\n", retour);
-	retour = printf("pr%lld\n", -9223372036854775808);
+//	retour = ft_printf("ft%lld\n", -9223372036854775808);
+//	printf("ft retour = %d\n", retour);
+//	retour = printf("pr%lld\n", -9223372036854775808);
+//	printf("pr retour = %d\n", retour);
+//	ft_printf("ft%Z\n"); 
+//	printf("pr%Z\n");
+//   retour = ft_printf("%");	
+//	printf("ft retour = %d\n", retour);
+  // retour = printf("%");	
+//	retour = ft_printf("%Z");
+//	printf("ft retour = %d\n", retour);
+//	retour = printf("%Z");
+//	printf("pr retour = %d\n", retour);
+//	retour = ft_printf("%-05%");
+//	printf("ft retour = %d\n", retour);
+  // 	printf("\n");
+//	retour = printf("%-05%"); 
+//	printf("pr retour = %d\n", retour);
+//	ft_printf("ft%05c", 42);
+ //	printf("\n");
+//	printf("pr%05c", 42);
+  // 	printf("\n");
+//	ft_printf("ft%-05c", 42);
+  // 	printf("\n");
+//	printf("pr%-05c", 42);
+//	ft_printf("ft%5+d", 42); 
+  //	printf("\n");
+	//printf("pr%5+d", 42); 
+//retour = 	printf("{%}\n");
+//	printf("pr retour = %d\n", retour);
+//	retour = ft_printf("{%}\n");
+//	printf("ft retour = %d\n", retour);
+	retour = printf("{%S}\n", NULL);
 	printf("pr retour = %d\n", retour);
+	printf("\n");
+	retour = ft_printf("{%S}\n", NULL);
+	printf("ft retour = %d\n", retour);
 	return (0);
 }
 
