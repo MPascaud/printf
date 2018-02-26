@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 19:46:56 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/21 13:51:13 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 15:00:04 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int		ft_string(va_list args, t_variables *variables)
 	i = 0;
 	ret = 0;
 	tmp = (char*)va_arg(args, char*);
+	if (tmp == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	len = ft_strlen(tmp);
 	if (len > variables->precision && variables->precision != -1)
 		len = variables->precision;

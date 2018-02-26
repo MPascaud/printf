@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 22:08:58 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 14:51:05 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,10 @@ int		ft_unsigned(va_list args, t_variables *variables)
 			i++;
 		}
 		ft_unsigned_putnbr(tmp, variables, nbchiffres, 0);
-		ret += nbchiffres;
+	//	printf("diese = %d", variables->diese);
+	//	if (variables->diese == -1)
+	//		variables->diese = 0;
+		ret += (nbchiffres /*+ variables->diese*/);
 	}
 	if (variables->moins == 1)
 	{
@@ -158,6 +161,8 @@ int		ft_unsigned(va_list args, t_variables *variables)
 			i++;
 		}
 	}
+	if ((variables->specificateur == 'o' || variables->specificateur == 'O') && tmp == 0 && variables->diese == 1)
+		ret++;
 	return (ret);
 }
 
