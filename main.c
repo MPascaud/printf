@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 16:10:30 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 16:13:26 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,11 +294,15 @@ retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 //	printf("pr%%\n");
 //	retour = printf("pr%-45.3ll%\n");
 //	printf("pr retour = %d\n", retour);
-	retour = ft_printf("ft%%\n"); 
-	printf("ft retour = %d\n", retour);
+//	retour = ft_printf("ft%%\n"); 
+//	printf("ft retour = %d\n", retour);
 //	retour = ft_printf("ft%-45.3ll%\n");
-	retour = printf("pr%%\n"); 
-	printf("pr retour = %d\n", retour);
+//	retour = printf("pr%%\n"); 
+//	printf("pr retour = %d\n", retour);
+	ft_printf("ft%hhd\n", 128);
+	printf("pr%hhd\n", 128);
+	ft_printf("ft%d\n", 128);
+	printf("pr%d\n", 128);
 	return (0);
 }
 
