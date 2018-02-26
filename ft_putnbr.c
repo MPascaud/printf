@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:24:37 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 21:48:59 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 16:21:18 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,15 @@ void	ft_putnbr(intmax_t nb, t_variables *variables, int nbchiffres, int tmp)
 	}
 	if (nb < 0 /*&& variables->specificateur != 'o'*/)
 	{
-		ft_putchar('-');
+	//	printf("coucou");
+		//ft_putchar('-');
 		if (nb < -9223372036854775807)
 		{
 			ft_putchar('9');
 			nb = -223372036854775808;
 		}
+		else
+			ft_putchar('-');
 		nb = -nb;
 	}
 	if (nb >= base)

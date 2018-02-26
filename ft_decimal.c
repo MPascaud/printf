@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 21:59:23 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 16:24:33 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		ft_decimal(va_list args, t_variables *variables)
 		}
 		if (tmp < 0 /*&& variables->specificateur != 'o'*/)
 		{
+			//printf("coucou");
 			write(1, "-", 1);
 			tmp = -tmp;
 			ret++;

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 14:10:14 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 16:28:00 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		signed_nombrechiffres(intmax_t nb, t_variables *variables)
 			return (0);
 		return (1);
 	}
+	if (nb < -9223372036854775807)
+		return (19);
 	if (nb < 0)
 		nb = -nb;
 	while (nb >= base)
