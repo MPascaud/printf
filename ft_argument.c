@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 18:46:06 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 19:11:08 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ int		ft_modulo(va_list args, t_variables *variables)
 			i++;
 			ret++;
 		}
-		write (1, "%", 1);
+		ft_putchar(variables->specificateur);
 	}
 	if (variables->moins == 1)
 	{
-		write(1, "%", 1);
+		ft_putchar(variables->specificateur);
 		while ((i + 1) < variables->gabarit)
 		{
 			write(1, " ", 1);
@@ -98,7 +98,18 @@ int		ft_modulo(va_list args, t_variables *variables)
 	return (ret);
 }
 
+int		ft_specificateur_invalide(va_list args, t_variables *variables)
+{
+	int		ret;
 
+	ret = 0;
+
+	if (variables->moins == 0)
+	{
+
+	}
+	return (ret);
+}
 
 int		ft_argument(va_list args, t_variables *variables)
 {
@@ -126,11 +137,12 @@ int		ft_argument(va_list args, t_variables *variables)
 		ret = ft_modulo(args, variables);
 	else
 	{
-		if (variables->specificateur >= 33 && variables->specificateur <= 126)
+		if ((variables->specificateur >= 48 && variables->specificateur <= 64) || (variables->specificateur >= 65 && variables->specificateur <= 91) || (variables->specificateur>= 93 && variables->specificateur <= 126))
 		{
-			ft_putchar(variables->specificateur);
-			if ((variables->specificateur >= 48 && variables->specificateur <= 64) || (variables->specificateur >= 65 && variables->specificateur <= 91) || (variables->specificateur>= 93 && variables->specificateur <= 126))
-				return (1);
+			ret = ft_modulo(args, variables);
+
+				//ft_putchar(variables->specificateur);
+				//return (1);
 		}
 	}
 	return (ret);

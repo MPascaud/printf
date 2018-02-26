@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 16:28:00 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 20:58:34 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		nombrechiffres(unsigned long long nb, t_variables *variables)
 //	tmp = nb;	
 	if (nb == 0)
 	{
-		if (variables->precision == 0)
+		if (variables->precision == 0 || (variables->precision == -1 && variables->diese == 1 && variables->specificateur != 'x' && variables->specificateur != 'X'))//!!!!!attention la
 			return (0);
 		return (1);
 	}

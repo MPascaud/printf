@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 14:51:05 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 20:49:31 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,18 @@ void	ft_unsigned_putnbr(uintmax_t nb, t_variables *variables, int nbchiffres, in
 		base = 16;
 	if ((variables->specificateur == 'o' || variables->specificateur == 'O') && tmp == 0 && variables->diese == 1)
 	{
+		//if (variables->gabarit != 0 || variables->precision != -1)
+		//if (nb != 0)
 		write(1, "0", 1);
+		if (variables->precision == -1 && nb == 0)
+			return ;
 	/*	if (variables->specificateur == 'x')
 			write(1, "x", 1);
 		if (variables->specificateur == 'X')
 			write(1, "X", 1);*/
 		tmp = 1;
 	}
-	if (variables->precision == 0 && nb == 0)
+	if ((variables->precision == 0) && nb == 0)
 		return ;
 //	printf("base = %d\n", base);
 	if (nb >= base)

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 18:49:38 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 21:50:43 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		ft_unistring(va_list args, t_variables *variables)
 		write(1, "(null)", 6);
 		return (6);
 	}
+	//printf("precision = %d\n", variables->precision);
 	while (tmp[i])
 	{
 		if (tmp[i] <= 127)
@@ -63,6 +64,8 @@ int		ft_unistring(va_list args, t_variables *variables)
 		i++;
 	}
 	i = 0;
+	if (variables->precision == 0)
+		len = 0;
 //	ft_printf("len = %d\n", len);
 	if (variables->moins == 0)
 	{
@@ -73,6 +76,8 @@ int		ft_unistring(va_list args, t_variables *variables)
 			ret++;
 			i++;
 		}
+		if (variables->precision == 0)
+			return (ret);
 		i = 0;
 		while (tmp[i])
 		{

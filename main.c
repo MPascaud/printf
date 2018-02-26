@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 23:30:15 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 18:51:24 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 21:46:17 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -335,11 +335,81 @@ retour = printf("pr@moulitest: %#.o %#.0o\n", 0, 0);
 //	printf("pr retour = %d\n", retour);
 //	retour = ft_printf("{%}\n");
 //	printf("ft retour = %d\n", retour);
-	retour = printf("{%S}\n", NULL);
+//	retour = printf("{%S}\n", NULL);
+//	printf("pr retour = %d\n", retour);
+//	printf("\n");
+//	retour = ft_printf("{%S}\n", NULL);
+//	printf("ft retour = %d\n", retour);
+//	printf("pr{%10R}\n");
+//	ft_printf("ft{%10R}\n");
+//	printf("{%05s}", "abc");
+//	printf("{%030S}", L"我是一只猫。");
+//	printf("{%05p}", 0);
+//	retour = printf("pr%#o\n", 0);
+//	printf("pr retour = %d\n", retour);
+//	retour =ft_printf("ft%#o\n", 0);
+//	printf("ft retour = %d\n", retour);
+/*	retour =printf("pr%#6o\n", 2500); 
 	printf("pr retour = %d\n", retour);
-	printf("\n");
-	retour = ft_printf("{%S}\n", NULL);
+	retour =ft_printf("ft%#6o\n", 2500); 
 	printf("ft retour = %d\n", retour);
+	retour =printf("pr%-#6o\n", 2500);  
+	printf("pr retour = %d\n", retour);
+	retour =ft_printf("ft%-#6o\n", 2500);  
+	printf("ft retour = %d\n", retour);
+	retour =printf("pr@moulitest: %#.o %#.0o\n", 0, 0);  
+	printf("pr retour = %d\n", retour);
+	retour =ft_printf("ft@moulitest: %#.o %#.0o\n", 0, 0);  
+	printf("ft retour = %d\n", retour);*/
+//	printf("%+o", 0);
+//	printf("%.4S", L"ÊM-M-^QÊM-^XØ‰∏M-ÂM-^O™ÁM-^L´„M-M-^B");
+//	printf("%.5p", 0);
+//	printf("{%05.s}", 0);
+//	printf("% o|%+o", 42, 42);
+//
+//
+//
+//CAS INDETERMINES	
+/*//	printf("%ll#x", 9223372036854775807); 
+//printf("%010s is a string", "this");
+//printf("%5+d", 42);
+//printf("%5+d", -42); 
+printf("%-5+d", 42);  
+printf("%-5+d", -42);  
+printf("%zhd", 4294967296);
+printf("%jzd", 9223372036854775807); 
+printf("%jhd", 9223372036854775807);  
+printf("%lhl", 9223372036854775807); 
+printf("%lhlz", 9223372036854775807);
+printf("%zj", 9223372036854775807);  
+printf("%lhh", 2147483647);
+printf("%hhld", 128);
+printf("@main_ftprintf: %####0000 33..1..#00d\n", 256);
+printf("@main_ftprintf: %####0000 33..1d", 256);
+printf("@main_ftprintf: %###-#0000 33...12..#0+0d", 256);
+printf("{%05p}", 0);
+printf("{%030S}", L"我是一只猫。");
+printf("{%05s}", "abc");
+printf("%+O", 1);
+printf("%+O", 42);
+printf("%+O", 0);
+printf("%+o", 42);
+printf("%+o", 0);
+printf("%.4S", L"我是一只猫。");
+printf("%15.4S", L"我是一只猫。");
+printf("%4.15S", L"我是一只猫。");*/
+retour = printf("pr%4.S\n", L"我是一只猫。");//<<<<<<<-----
+printf("retour = %d\n", retour);
+retour = ft_printf("ft%4.S\n", L"我是一只猫。");//<<<<<<<-----
+printf("retour = %d\n", retour);
+/*printf("%4.1S", L"Jambon");
+printf("%2.9p", 1234567);
+printf("%2.9p", 1234);
+printf("%.5p", 0);
+printf("{%05.s}", 0);
+printf("{%05.S}", L"42 c est cool");
+printf("% o|%+o", 42, 42);*/
+
 	return (0);
 }
 
