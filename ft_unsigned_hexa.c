@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/26 15:20:54 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 15:22:57 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ int		ft_unsigned_hexa(va_list args, t_variables *variables)
 		i = 0;
 		if (variables->diese == 1 && tmp != 0)
 		{
-			write(1, "0x", 2);
+			if (variables->specificateur == 'x')
+				write(1, "0x", 2);
+			if (variables->specificateur == 'X')
+				write(1, "0X", 2);
 			ret += 2;
 		}
 		while (((i < variables->precision - nbchiffres) || (j + i + nbchiffres) < variables->gabarit))

@@ -6,7 +6,7 @@
 /*   By: mpascaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/15 16:25:52 by mpascaud          #+#    #+#             */
-/*   Updated: 2018/02/25 20:22:12 by mpascaud         ###   ########.fr       */
+/*   Updated: 2018/02/26 15:57:58 by mpascaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,36 @@ int		ft_pointeur(va_list args, t_variables *variables)
 
 
 
+int		ft_modulo(va_list args, t_variables *variables)
+{
+	int		ret;
+	int		i;
+
+	ret = 1;
+	i = 0;
+	if (variables->moins == 0)
+	{
+		while ((i + 1) < variables->gabarit)
+		{
+			write(1, " ", 1);
+			i++;
+			ret++;
+		}
+		write (1, "%", 1);
+	}
+	if (variables->moins == 1)
+	{
+		write(1, "%", 1);
+		while ((i + 1) < variables->gabarit)
+		{
+			write(1, " ", 1);
+			i++;
+			ret++;
+		}
+	}
+	return (ret);
+}
+
 
 
 int		ft_argument(va_list args, t_variables *variables)
@@ -89,6 +119,8 @@ int		ft_argument(va_list args, t_variables *variables)
 		ret = ft_unsigned_hexa(args, variables);
 	if (variables->specificateur == 'p')
 		ret = ft_pointeur(args, variables);
+	if (variables->specificateur == '%')
+		ret = ft_modulo(args, variables);
 	return (ret);
 }
 
